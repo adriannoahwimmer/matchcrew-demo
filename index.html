@@ -134,6 +134,7 @@ section { padding: 48px 0; border-top: 1px solid var(--linie); }
 .row { display: grid; grid-template-columns: 64px 1fr; gap: 12px; width: 100%; min-height: 76px; padding: 12px 16px; border: 0;
   background: var(--papier); text-align: left; cursor: pointer; }
 .row:hover, .row[aria-expanded="true"] { background: var(--kreide); }
+.row:hover .badge-neutral, .row[aria-expanded="true"] .badge-neutral { background: var(--papier); }
 .row-main { display: grid; gap: 4px; min-width: 0; }
 .row-top { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
 .price { font: 600 20px/24px var(--font-cond); white-space: nowrap; font-variant-numeric: tabular-nums; }
@@ -269,7 +270,7 @@ footer p { margin: 0 0 4px; }
           <span class="step-no" aria-hidden="true">3</span>
           <div>
             <h3 class="heading">Zusagen und los</h3>
-            <p>Nach der Zusage steht der Einsatz. Beide werden vorher erinnert und bewerten sich danach. Bezahlt wird direkt untereinander, zum Beispiel bar vor Ort.</p>
+            <p>Nach der Zusage steht der Einsatz. Beide werden vorher erinnert und bewerten sich danach. Bezahlt wird direkt untereinander, zum Beispiel bar vor Ort oder per PayPal.</p>
           </div>
         </li>
       </ol>
@@ -286,7 +287,7 @@ footer p { margin: 0 0 4px; }
         </div>
         <div class="audience">
           <h3 class="heading">Du willst helfen</h3>
-          <p>Für Jugendliche, Studierende, Kampf- und Schiedsrichter. Finde Einsätze in deiner Nähe und verdien dir etwas dazu. Für Jugendliche gelten besondere Schutzregeln.</p>
+          <p>Für Jugendliche, Studierende, Kampf- und Schiedsrichter. Finde Einsätze in deiner Nähe und verdien dir etwas dazu.</p>
         </div>
       </div>
     </section>
@@ -294,14 +295,14 @@ footer p { margin: 0 0 4px; }
     <section aria-labelledby="rollen-title">
       <div class="section-head">
         <h2 class="title" id="rollen-title">Rollen</h2>
-        <p class="muted">Eine Lizenz brauchst du nur fürs Tablet. Der Onlinekurs dauert etwa 15 Minuten.</p>
+        <p class="muted">Eine Lizenz brauchst du fürs Tablet und für manche Schiedsrichter-Stufen. Fürs Tablet reicht ein Onlinekurs von etwa 15 Minuten.</p>
       </div>
       <ul class="roles">
         <li><h3 class="heading">Kampfgericht (Position egal)</h3><p class="small muted">Irgendeine Position am Kampfgericht, wird vor Ort verteilt.</p></li>
         <li><div class="row-top"><h3 class="heading">Anschreiber (Tablet)</h3><span class="badge badge-info"><svg class="icon" aria-hidden="true"><use href="#i-id-card"/></svg>Lizenz nötig</span></div><p class="small muted">Führt den digitalen Spielberichtsbogen.</p></li>
         <li><h3 class="heading">Zeitnehmer</h3><p class="small muted">Bedient die Spieluhr.</p></li>
         <li><h3 class="heading">24-Sekunden-Zeitnehmer</h3><p class="small muted">Bedient die 24-Sekunden-Uhr.</p></li>
-        <li><h3 class="heading">Schiedsrichter</h3><p class="small muted">Leitet das Spiel, wenn der Verband niemanden stellt.</p></li>
+        <li><div class="row-top"><h3 class="heading">Schiedsrichter</h3><span class="badge badge-info"><svg class="icon" aria-hidden="true"><use href="#i-id-card"/></svg>Lizenz je nach Stufe</span></div><p class="small muted">Leitet das Spiel, wenn der Verband niemanden stellt.</p></li>
       </ul>
     </section>
 
@@ -370,7 +371,7 @@ footer p { margin: 0 0 4px; }
     { id: "r4", role: "24-Sekunden-Zeitnehmer", price: 15, venue: "Schulsporthalle Beispielallee", place: "Bruchsal", km: 22,
       kickoff: at(sat, 17), team: "Damen Landesliga, Heimspiel", by: jonas },
     { id: "r5", role: "Schiedsrichter", price: 30, venue: "Halle am Beispielweg", place: "Ettlingen", km: 9,
-      kickoff: at(sun, 13), team: "U18 Bezirksliga, Heimspiel", lead: 30, by: club },
+      kickoff: at(sun, 13), team: "U18 Bezirksliga, Heimspiel", by: club },
   ].map((r) => ({ ...r, meet: new Date(r.kickoff - (r.lead || 15) * MIN), end: new Date(+r.kickoff + 100 * MIN) }))
    .sort((a, b) => a.kickoff - b.kickoff);
 
@@ -424,7 +425,7 @@ footer p { margin: 0 0 4px; }
       r.by.club && badge("neutral", "building", "Verein"),
     ].filter(Boolean).join("");
     let action;
-    if (!s) action = `<button type="button" class="btn btn-primary btn-block" data-act="request" data-id="${r.id}" data-focus="act-${r.id}">Ich übernehme</button>`;
+    if (!s) action = `<button type="button" class="btn btn-primary btn-block" data-act="request" data-id="${r.id}" data-focus="act-${r.id}">Anfragen</button>`;
     else if (s === "pending") action = `<div class="status-line">${requestStatusBadge(s)}<p class="small">${r.by.name} entscheidet, wer den Dienst übernimmt.</p></div>`;
     else action = `<div class="status-line">${requestStatusBadge(s)}<p class="small">${r.by.name} hat zugesagt. Ihr werdet vorher erinnert. Treffpunkt ist um ${hhmm(r.meet)}.</p></div>`;
 
