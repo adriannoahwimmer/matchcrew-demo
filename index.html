@@ -8,6 +8,12 @@
 <meta property="og:title" content="MatchCrew">
 <meta property="og:description" content="Spieltagsdienst abgeben oder übernehmen · Basketball · Karlsruhe">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://adriannoahwimmer.github.io/matchcrew-demo/">
+<meta property="og:image" content="https://adriannoahwimmer.github.io/matchcrew-demo/screenshots/og.png">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta property="og:image:alt" content="MatchCrew: drei Screens der App mit Gesuchen, einem Gesuch und einem Chat">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#172033">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23172033'/%3E%3Ccircle cx='16' cy='16' r='7' fill='%23F26B21'/%3E%3C/svg%3E">
 <style>
@@ -176,8 +182,36 @@ section { padding: 48px 0; border-top: 1px solid var(--linie); }
 .roles .row-top { align-items: center; }
 .roles p { margin: 0; }
 
-.banner { display: flex; gap: 12px; align-items: flex-start; background: var(--info-light); border-radius: 10px; padding: 16px; }
-.banner p { margin: 0; }
+/* Screenshots */
+.shots { list-style: none; margin: 0 calc(-1 * var(--gutter)); padding: 4px var(--gutter) 16px; display: flex; gap: 16px;
+  overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 var(--gutter); }
+.shots li { flex: 0 0 216px; scroll-snap-align: start; }
+@media (min-width: 768px) {
+  .shots { margin: 0; padding: 4px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px 24px; overflow: visible; }
+}
+.shots figure { margin: 0; display: grid; gap: 12px; }
+.phone { background: var(--tafel); border-radius: 30px; padding: 7px; }
+.phone img { display: block; width: 100%; height: auto; border-radius: 24px; background: var(--halle); }
+.shots figcaption { font-size: 14px; line-height: 20px; color: var(--grau); }
+.shots figcaption strong { display: block; color: var(--tafel); font: 600 17px/22px var(--font); margin-bottom: 2px; }
+.browser { margin: 32px 0 0; border: 1px solid var(--linie); border-radius: 10px; overflow: hidden; background: var(--papier); }
+.browser-bar { display: flex; align-items: center; gap: 6px; padding: 10px 12px; border-bottom: 1px solid var(--linie); background: var(--kreide); }
+.browser-bar span { width: 10px; height: 10px; border-radius: 50%; background: var(--linie-stark); opacity: 0.5; }
+.browser-bar .url { width: auto; height: auto; border-radius: 6px; background: var(--papier); opacity: 1; margin-left: 8px;
+  padding: 2px 10px; font: 500 13px/16px var(--font); color: var(--grau); }
+.browser img { display: block; width: 100%; height: auto; }
+.browser figcaption { padding: 10px 12px; font-size: 14px; line-height: 20px; color: var(--grau); border-top: 1px solid var(--linie); }
+.live { margin-top: 24px; display: grid; gap: 12px; justify-items: start; background: var(--papier); border: 1px solid var(--linie);
+  border-radius: 10px; padding: 20px; }
+.live p { margin: 0; }
+
+/* Stand */
+.timeline { list-style: none; margin: 0; padding: 0; background: var(--papier); border-top: 1px solid var(--linie); border-bottom: 1px solid var(--linie); }
+.timeline li { padding: 16px; display: grid; gap: 4px; }
+.timeline li + li { border-top: 1px solid var(--linie); }
+.timeline .row-top { align-items: center; }
+.timeline p { margin: 0; }
+.stack { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 24px; }
 
 footer { border-top: 1px solid var(--linie); padding: 24px 0 48px; }
 footer p { margin: 0 0 4px; }
@@ -204,7 +238,7 @@ footer p { margin: 0 0 4px; }
   <symbol id="i-building" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></symbol>
   <symbol id="i-badge-check" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></symbol>
   <symbol id="i-search-x" viewBox="0 0 24 24"><path d="m13.5 8.5-5 5"/><path d="m8.5 8.5 5 5"/><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
-  <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></symbol>
+  <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></symbol>
 </svg>
 
 <div class="wrap">
@@ -221,16 +255,61 @@ footer p { margin: 0 0 4px; }
         <p>MatchCrew findet Ersatz für deinen Spieltagsdienst. Wer einen Dienst nicht selbst übernehmen kann, schreibt ihn als Gesuch aus. Wer Zeit hat, fragt an und verdient sich etwas dazu.</p>
         <p class="muted">Zum Start für Basketball in Karlsruhe und Umgebung.</p>
         <div class="actions">
-          <a class="btn btn-primary" href="#demo">Demo ausprobieren</a>
-          <a class="btn btn-secondary" href="#ablauf">Ablauf ansehen</a>
+          <a class="btn btn-primary" href="#app">App ansehen</a>
+          <a class="btn btn-secondary" href="#demo">Demo ausprobieren</a>
         </div>
       </div>
     </div>
 
+    <section id="app" aria-labelledby="app-title">
+      <div class="section-head">
+        <h2 class="title" id="app-title">So sieht die App aus</h2>
+        <p class="muted">Screenshots der aktuellen Web-Version. Alle Gesuche, Personen und Nachrichten sind erfunden.</p>
+      </div>
+
+      <ul class="shots">
+        <li><figure>
+          <div class="phone"><img src="screenshots/entdecken.png" width="390" height="844" alt="Entdecken: Liste offener Gesuche mit Uhrzeit, Halle, Entfernung und Preis"></div>
+          <figcaption><strong>Entdecken</strong>Gesuche in deiner Nähe, mit Filtern für Rolle, Datum, Uhrzeit und Umkreis.</figcaption>
+        </figure></li>
+        <li><figure>
+          <div class="phone"><img src="screenshots/gesuch.png" width="390" height="844" loading="lazy" alt="Gesuch: Treffpunkt, Anpfiff, Halle, Mannschaft und Bewertung des Auftraggebers"></div>
+          <figcaption><strong>Gesuch</strong>Treffpunkt, Halle und Mannschaft auf einen Blick, dazu wer den Dienst abgibt.</figcaption>
+        </figure></li>
+        <li><figure>
+          <div class="phone"><img src="screenshots/chat.png" width="390" height="844" loading="lazy" alt="Chat zu einem vereinbarten Einsatz"></div>
+          <figcaption><strong>Chat</strong>Absprachen direkt in der App. Nach der Zusage steht der Einsatz.</figcaption>
+        </figure></li>
+        <li><figure>
+          <div class="phone"><img src="screenshots/helfer.png" width="390" height="844" loading="lazy" alt="Helfer: Angebote mit Zeitfenster und Lizenz, darunter das Helfer-Verzeichnis"></div>
+          <figcaption><strong>Helfer</strong>Wer Zeit hat, stellt ein Angebot ein. Auftraggeber laden direkt ein.</figcaption>
+        </figure></li>
+        <li><figure>
+          <div class="phone"><img src="screenshots/anfragen.png" width="390" height="844" loading="lazy" alt="Anfragen zum eigenen Gesuch mit Zusagen und Ablehnen"></div>
+          <figcaption><strong>Anfragen</strong>Anfragen vergleichen, zusagen oder passende Helfer einladen.</figcaption>
+        </figure></li>
+        <li><figure>
+          <div class="phone"><img src="screenshots/profil.png" width="390" height="844" loading="lazy" alt="Profil mit Zuverlässigkeit und Bewertungen"></div>
+          <figcaption><strong>Profil</strong>Bewertungen und Zuverlässigkeit schaffen Vertrauen.</figcaption>
+        </figure></li>
+      </ul>
+
+      <figure class="browser">
+        <div class="browser-bar" aria-hidden="true"><span></span><span></span><span></span><span class="url">matchcrew.expo.app</span></div>
+        <img src="screenshots/desktop.png" width="1280" height="800" loading="lazy" alt="Die Web-Version am Computer mit Navigation oben">
+        <figcaption>Dieselbe App läuft auch im Browser, am Handy und am Computer.</figcaption>
+      </figure>
+
+      <div class="live">
+        <p>Die Web-Version läuft schon in einer Testumgebung. Ohne Anmeldung kannst du Gesuche und Helfer ansehen. Gut möglich, dass dort gerade wenig los ist.</p>
+        <a class="btn btn-secondary btn-md" href="https://matchcrew.expo.app">Web-Version öffnen<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
+      </div>
+    </section>
+
     <section id="demo" aria-labelledby="demo-title">
       <div class="section-head">
         <h2 class="title" id="demo-title">Probier es aus</h2>
-        <p class="muted">Eine kleine Vorschau der App. Alle Gesuche und Personen sind erfunden, nichts wird gesendet.</p>
+        <p class="muted">Eine vereinfachte Klick-Demo, die nur in deinem Browser läuft. Alle Gesuche und Personen sind erfunden, nichts wird gesendet.</p>
       </div>
 
       <div class="device">
@@ -238,7 +317,7 @@ footer p { margin: 0 0 4px; }
           <h3 class="display">Entdecken</h3>
           <div class="segmented" role="group" aria-label="Ansicht">
             <button type="button" data-tab="requests" aria-pressed="true">Gesuche</button>
-            <button type="button" data-tab="offers" aria-pressed="false">Angebote</button>
+            <button type="button" data-tab="offers" aria-pressed="false">Helfer</button>
           </div>
         </div>
         <div class="chips" id="chips" role="group" aria-label="Filter"></div>
@@ -283,7 +362,7 @@ footer p { margin: 0 0 4px; }
       <div class="audiences">
         <div class="audience">
           <h3 class="heading">Du willst einen Dienst abgeben</h3>
-          <p>Für Spielerinnen und Spieler, Eltern und Vereine. Gib deinen Dienst zuverlässig ab, ohne im eigenen Team herumzufragen.</p>
+          <p>Für Spieler, Eltern und Vereine. Gib deinen Dienst zuverlässig ab, ohne im eigenen Team herumzufragen.</p>
         </div>
         <div class="audience">
           <h3 class="heading">Du willst helfen</h3>
@@ -306,17 +385,43 @@ footer p { margin: 0 0 4px; }
       </ul>
     </section>
 
-    <section aria-labelledby="status-title">
-      <h2 class="sr-only" id="status-title">Stand</h2>
-      <div class="banner">
-        <svg class="icon" aria-hidden="true"><use href="#i-info"/></svg>
-        <p>MatchCrew ist in Entwicklung. Die App kommt für iOS, Android und den Browser.</p>
+    <section id="stand" aria-labelledby="stand-title">
+      <div class="section-head">
+        <h2 class="title" id="stand-title">Stand der Entwicklung</h2>
+        <p class="muted">Stand: Oktober 2026</p>
       </div>
+      <ol class="timeline">
+        <li><div class="row-top"><h3 class="heading">Alle Kernfunktionen</h3><span class="badge badge-success"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg>Erledigt</span></div>
+          <p class="small muted">Gesuche, Anfragen, Angebote und Einladungen, Helfer-Verzeichnis, Chat, Bewertungen, Melden und Blockieren.</p></li>
+        <li><div class="row-top"><h3 class="heading">E-Mail-Benachrichtigungen</h3><span class="badge badge-success"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg>Erledigt</span></div>
+          <p class="small muted">Neue Anfragen, Zusagen, Chat-Nachrichten und eine Erinnerung einen Tag vor dem Spiel.</p></li>
+        <li><div class="row-top"><h3 class="heading">Web-Version und Android-App</h3><span class="badge badge-success"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg>Erledigt</span></div>
+          <p class="small muted">Die Web-Version läuft in einer Testumgebung, die Android-App in ersten Test-Builds.</p></li>
+        <li><div class="row-top"><h3 class="heading">Push-Benachrichtigungen</h3><span class="badge badge-accent">Als Nächstes</span></div>
+          <p class="small muted">Direkt aufs Handy, mit einem Tipp zum passenden Gesuch oder Chat.</p></li>
+        <li><div class="row-top"><h3 class="heading">Geschlossener Test</h3><span class="badge badge-accent">Als Nächstes</span></div>
+          <p class="small muted">Mindestens zwei Wochen Test mit Testern aus Karlsruhe.</p></li>
+        <li><div class="row-top"><h3 class="heading">Start</h3><span class="badge badge-neutral">Geplant</span></div>
+          <p class="small muted">Zuerst für Android und im Browser, danach für iOS.</p></li>
+      </ol>
+    </section>
+
+    <section id="technik" aria-labelledby="technik-title">
+      <div class="section-head">
+        <h2 class="title" id="technik-title">Hinter den Kulissen</h2>
+      </div>
+      <p>Eine Codebasis für Android, iOS und den Browser. Die Daten liegen in Frankfurt, die Sicherheitsregeln direkt in der Datenbank und sind mit Tests abgedeckt.</p>
+      <div class="stack">
+        <span class="badge badge-neutral">Expo</span><span class="badge badge-neutral">React Native</span><span class="badge badge-neutral">TypeScript</span>
+        <span class="badge badge-neutral">Supabase</span><span class="badge badge-neutral">PostGIS</span><span class="badge badge-neutral">GitHub Actions</span>
+        <span class="badge badge-neutral">Sentry</span>
+      </div>
+      <a class="btn btn-secondary btn-md" href="https://github.com/adriannoahwimmer/matchcrew-demo#readme">Architektur und Arbeitsweise auf GitHub<svg class="icon" aria-hidden="true"><use href="#i-external"/></svg></a>
     </section>
   </main>
 
   <footer class="small muted">
-    <p>© 2026 MatchCrew</p>
+    <p>© 2026 MatchCrew · Entwickelt von <a href="https://github.com/adriannoahwimmer">Adrian Wimmer</a> in Karlsruhe</p>
     <p>Diese Seite setzt keine Cookies und lädt keine Inhalte von anderen Servern.</p>
     <p><a href="impressum.html">Impressum</a> und <a href="impressum.html#datenschutz">Datenschutz</a></p>
   </footer>
