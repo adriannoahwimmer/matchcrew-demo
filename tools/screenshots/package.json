@@ -1,0 +1,14 @@
+{
+  "name": "matchcrew-screenshots",
+  "private": true,
+  "type": "module",
+  "description": "Screenshots der MatchCrew-Web-Version mit erfundenen Demo-Daten für README und Landingpage",
+  "scripts": {
+    "shots": "node shoot.mjs",
+    "compose": "node compose.mjs",
+    "all": "node shoot.mjs && node compose.mjs"
+  },
+  "dependencies": {
+    "puppeteer-core": "24.43.1"
+  }
+}
