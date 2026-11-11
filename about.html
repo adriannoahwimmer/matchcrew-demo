@@ -213,6 +213,11 @@ section { padding: 48px 0; border-top: 1px solid var(--linie); }
 .timeline p { margin: 0; }
 .stack { display: flex; flex-wrap: wrap; gap: 6px; margin: 16px 0 24px; }
 
+.leagues { width: 100%; margin: 24px 0 8px; border-collapse: collapse; background: var(--papier); border: 1px solid var(--linie); border-radius: 10px; overflow: hidden; }
+.leagues th, .leagues td { padding: 10px 12px; text-align: left; vertical-align: top; border-top: 1px solid var(--linie); }
+.leagues thead th { border-top: 0; background: var(--kreide); font-weight: 600; }
+.leagues + p { margin: 0; }
+
 footer { border-top: 1px solid var(--linie); padding: 24px 0 48px; }
 footer p { margin: 0 0 4px; }
 
@@ -338,7 +343,7 @@ footer p { margin: 0 0 4px; }
           <span class="step-no" aria-hidden="true">1</span>
           <div>
             <h3 class="heading">Gesuch erstellen</h3>
-            <p>Rolle, Halle, Anpfiff und Preis eintragen und veröffentlichen.</p>
+            <p>Rolle, Liga, Halle, Anpfiff und Preis eintragen. Die Liga setzt Mindestlizenz und Treffpunkt automatisch.</p>
           </div>
         </li>
         <li>
@@ -377,12 +382,12 @@ footer p { margin: 0 0 4px; }
     <section id="verbaende" aria-labelledby="verbaende-title">
       <div class="section-head">
         <h2 class="title" id="verbaende-title">Für Verbände, Vereine und Lehrgänge</h2>
-        <p class="muted">Jedes Heimspiel braucht ein vollständiges Kampfgericht, mindestens eine Person davon mit gültigem Kampfrichterzertifikat. Genau diese Dienste bleiben oft an wenigen hängen.</p>
+        <p class="muted">Jedes Heimspiel braucht ein vollständiges Kampfgericht, ab der Oberliga mit Lizenz am Tablet. Genau diese Dienste bleiben oft an wenigen hängen.</p>
       </div>
       <div class="audiences">
         <div class="audience">
           <h3 class="heading">Nach dem Lehrgang</h3>
-          <p>Wer gerade das Kampfrichterzertifikat oder eine Schiedsrichterlizenz gemacht hat, findet über MatchCrew Einsätze in der Nähe und sammelt Praxis.</p>
+          <p>Wer gerade das NBN23-Zertifikat, die DBB-Kampfrichterlizenz oder eine Schiedsrichterlizenz gemacht hat, findet über MatchCrew Einsätze in der Nähe und sammelt Praxis.</p>
         </div>
         <div class="audience">
           <h3 class="heading">Für Vereine</h3>
@@ -398,15 +403,26 @@ footer p { margin: 0 0 4px; }
     <section aria-labelledby="rollen-title">
       <div class="section-head">
         <h2 class="title" id="rollen-title">Rollen</h2>
-        <p class="muted">Eine Lizenz brauchst du fürs Tablet und für manche Schiedsrichter-Stufen. Fürs Tablet reicht das Kampfrichterzertifikat, ein Onlinekurs von etwa 15 Minuten.</p>
+        <p class="muted">Welche Lizenz nötig ist, hängt von der Liga ab. Wer eine höhere Stufe hat, kann auch alle Gesuche mit niedrigerer Mindestlizenz übernehmen.</p>
       </div>
       <ul class="roles">
-        <li><h3 class="heading">Kampfgericht (Position egal)</h3><p class="small muted">Irgendeine Position am Kampfgericht, wird vor Ort verteilt.</p></li>
-        <li><div class="row-top"><h3 class="heading">Anschreiber (Tablet)</h3><span class="badge badge-info"><svg class="icon" aria-hidden="true"><use href="#i-id-card"/></svg>Lizenz nötig</span></div><p class="small muted">Führt den digitalen Spielberichtsbogen.</p></li>
+        <li><h3 class="heading">Kampfgericht (Position egal)</h3><p class="small muted">Irgendeine Position am Kampfgericht, wird vor Ort verteilt. Ohne Lizenz nicht am Tablet.</p></li>
+        <li><div class="row-top"><h3 class="heading">Anschreiber (Tablet)</h3><span class="badge badge-info"><svg class="icon" aria-hidden="true"><use href="#i-id-card"/></svg>Je nach Liga</span></div><p class="small muted">Führt den digitalen Spielberichtsbogen. Stufen: ohne Lizenz, NBN23-Zertifikat, DBB-Kampfrichterlizenz.</p></li>
         <li><h3 class="heading">Zeitnehmer</h3><p class="small muted">Bedient die Spieluhr.</p></li>
         <li><h3 class="heading">24-Sekunden-Zeitnehmer</h3><p class="small muted">Bedient die 24-Sekunden-Uhr.</p></li>
-        <li><div class="row-top"><h3 class="heading">Schiedsrichter</h3><span class="badge badge-info"><svg class="icon" aria-hidden="true"><use href="#i-id-card"/></svg>Lizenz je nach Stufe</span></div><p class="small muted">Leitet das Spiel, wenn der Verband niemanden stellt.</p></li>
+        <li><div class="row-top"><h3 class="heading">Schiedsrichter</h3><span class="badge badge-info"><svg class="icon" aria-hidden="true"><use href="#i-id-card"/></svg>Je nach Stufe</span></div><p class="small muted">Leitet das Spiel, wenn der Verband niemanden stellt. Stufen: ohne Lizenz, LSE, LSD, LSC, LSB, LSA.</p></li>
       </ul>
+
+      <table class="leagues small">
+        <caption class="sr-only">Mindestlizenz am Tablet und Treffpunkt je Liga</caption>
+        <thead><tr><th scope="col">Liga</th><th scope="col">Anschreiber</th><th scope="col">Treffpunkt</th></tr></thead>
+        <tbody>
+          <tr><td>Kreis-, Bezirks-, Landesliga</td><td>ohne Lizenz</td><td>15 min vorher</td></tr>
+          <tr><td>Oberliga, Regionalliga Jugend</td><td>NBN23-Zertifikat</td><td>30 min vorher</td></tr>
+          <tr><td>Oberliga, Regionalliga Senioren, JBBL, NBBL</td><td>DBB-Kampfrichterlizenz</td><td>30 min vorher</td></tr>
+        </tbody>
+      </table>
+      <p class="small muted">Beide Lizenzen gibt es als kostenlosen Onlinekurs. Die Werte sind Standards und lassen sich im Gesuch ändern.</p>
     </section>
 
     <section id="stand" aria-labelledby="stand-title">
@@ -417,16 +433,18 @@ footer p { margin: 0 0 4px; }
       <ol class="timeline">
         <li><div class="row-top"><h3 class="heading">Alle Kernfunktionen</h3><span class="badge badge-success"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg>Erledigt</span></div>
           <p class="small muted">Gesuche, Anfragen, Angebote und Einladungen, Helfer-Verzeichnis, Chat, Bewertungen, Melden und Blockieren.</p></li>
-        <li><div class="row-top"><h3 class="heading">E-Mail-Benachrichtigungen</h3><span class="badge badge-success"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg>Erledigt</span></div>
-          <p class="small muted">Neue Anfragen, Zusagen, Chat-Nachrichten und eine Erinnerung einen Tag vor dem Spiel.</p></li>
-        <li><div class="row-top"><h3 class="heading">Web-Version und Android-App</h3><span class="badge badge-success"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg>Erledigt</span></div>
-          <p class="small muted">Die Web-Version ist online, die Android-App läuft über Google Play.</p></li>
-        <li><div class="row-top"><h3 class="heading">Push-Benachrichtigungen</h3><span class="badge badge-accent">Als Nächstes</span></div>
-          <p class="small muted">Direkt aufs Handy, mit einem Tipp zum passenden Gesuch oder Chat.</p></li>
+        <li><div class="row-top"><h3 class="heading">Push und E-Mail</h3><span class="badge badge-success"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg>Erledigt</span></div>
+          <p class="small muted">Neue Anfragen, Zusagen und Chat-Nachrichten, Erinnerungen vor dem Spiel. Je Kategorie einzeln abschaltbar.</p></li>
+        <li><div class="row-top"><h3 class="heading">Sporthallen in ganz Deutschland</h3><span class="badge badge-success"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg>Erledigt</span></div>
+          <p class="small muted">Über 4.000 Hallen aus OpenStreetMap, direkt im Gesuch suchbar.</p></li>
+        <li><div class="row-top"><h3 class="heading">Liga, Lizenzstufen und Treffpunkt</h3><span class="badge badge-success"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"/></svg>Erledigt</span></div>
+          <p class="small muted">Die Liga setzt Mindestlizenz und Treffpunkt nach den Ausschreibungen 2026/27, von der Kreisliga bis zur NBBL.</p></li>
         <li><div class="row-top"><h3 class="heading">Geschlossener Test</h3><span class="badge badge-accent">Läuft</span></div>
-          <p class="small muted">Seit November mit Testern aus dem Karlsruher Basketball. Weitere Tester sind willkommen: <a href="app/">hier mitmachen</a>.</p></li>
-        <li><div class="row-top"><h3 class="heading">Start</h3><span class="badge badge-neutral">Geplant</span></div>
-          <p class="small muted">Zuerst im Play Store und im Browser, danach für iOS.</p></li>
+          <p class="small muted">Android-App bei Google Play und Web-Version, mit Testern aus dem Karlsruher Basketball, bis etwa 15. November. Weitere Tester sind willkommen: <a href="app/">hier mitmachen</a>.</p></li>
+        <li><div class="row-top"><h3 class="heading">Start im Play Store</h3><span class="badge badge-accent">Als Nächstes</span></div>
+          <p class="small muted">Nach dem Test öffentlich für Android und im Browser.</p></li>
+        <li><div class="row-top"><h3 class="heading">iPhone-App</h3><span class="badge badge-neutral">Geplant</span></div>
+          <p class="small muted">Danach für iOS. Bis dahin läuft MatchCrew auf dem iPhone im Browser.</p></li>
       </ol>
     </section>
 
@@ -492,11 +510,11 @@ footer p { margin: 0 0 4px; }
 
   const requests = [
     { id: "r1", role: "Anschreiber (Tablet)", price: 15, venue: "Sporthalle Musterstraße", place: "Karlsruhe-Durlach", km: 4,
-      kickoff: at(sat, 15), team: "U16 Bezirksliga, Heimspiel", license: true, by: lena },
+      kickoff: at(sat, 15), team: "U16 Oberliga, Heimspiel", lead: 30, license: true, by: lena },
     { id: "r2", role: "Zeitnehmer", price: 20, venue: "Sporthalle am Testplatz", place: "Karlsruhe-Mühlburg", km: 3,
       kickoff: at(tomorrow, 19, 30), team: "Herren Kreisliga, Heimspiel", by: max },
     { id: "r3", role: "Kampfgericht (Position egal)", price: 0, venue: "Halle am Beispielweg", place: "Ettlingen", km: 9,
-      kickoff: at(sun, 11), team: "U14 Oberliga, Heimspiel", by: club },
+      kickoff: at(sun, 11), team: "U14 Oberliga, Heimspiel", lead: 30, by: club },
     { id: "r4", role: "24-Sekunden-Zeitnehmer", price: 15, venue: "Schulsporthalle Beispielallee", place: "Bruchsal", km: 22,
       kickoff: at(sat, 17), team: "Damen Landesliga, Heimspiel", by: jonas },
     { id: "r5", role: "Schiedsrichter", price: 30, venue: "Halle am Beispielweg", place: "Ettlingen", km: 9,
