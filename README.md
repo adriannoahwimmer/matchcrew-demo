@@ -9,8 +9,8 @@
 </p>
 
 <p align="center">
-  <a href="https://adriannoahwimmer.github.io/matchcrew-demo/about.html">Landing page</a> ·
-  <a href="https://adriannoahwimmer.github.io/matchcrew-demo/about.html#demo">Click demo</a> ·
+  <a href="https://adriannoahwimmer.github.io/matchcrew-demo/">Landing page</a> ·
+  <a href="https://adriannoahwimmer.github.io/matchcrew-demo/#demo">Click demo</a> ·
   <a href="https://matchcrew.expo.app">Live web version</a> ·
   <a href="#screenshots">Screenshots</a> ·
   <a href="#architecture">Architecture</a>
@@ -213,7 +213,7 @@ eingeladen. Nach der Zusage werden beide erinnert und bewerten sich nach dem Spi
   Tests mit Jest und pgTAP, CI mit GitHub Actions.
 - **Arbeitsweise:** Produkt, Anforderungen, Entscheidungen und Abnahme liegen bei mir; den Code schreibt Claude Code
   in einem festen Ablauf aus Plan, Freigabe, Pull Request, Test auf dem Handy und Merge bei grünem CI.
-- **Ausprobieren:** [Landingpage mit Klick-Demo](https://adriannoahwimmer.github.io/matchcrew-demo/about.html) und
+- **Ausprobieren:** [Landingpage mit Klick-Demo](https://adriannoahwimmer.github.io/matchcrew-demo/) und
   [Web-Version](https://matchcrew.expo.app) (Testumgebung).
 
 </details>
