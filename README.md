@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <img alt="Status: closed beta in preparation" src="https://img.shields.io/badge/status-closed%20beta%20in%20preparation-F26B21">
+  <img alt="Status: closed test on Google Play" src="https://img.shields.io/badge/status-closed%20test%20on%20Google%20Play-F26B21">
   <img alt="Platforms: Android, Web, iOS next" src="https://img.shields.io/badge/platforms-Android%20%C2%B7%20Web%20%C2%B7%20iOS%20next-172033">
   <img alt="Expo SDK 57" src="https://img.shields.io/badge/Expo-SDK%2057-172033?logo=expo">
   <img alt="TypeScript strict" src="https://img.shields.io/badge/TypeScript-strict-172033?logo=typescript">
@@ -70,7 +70,7 @@ backend call with demo data.
 
 ## What works today
 
-All features of the MVP scope are implemented, except push notifications.
+All features of the MVP scope are implemented. The Android app has been in a closed test on Google Play since 29 October 2026.
 
 | Area | What it does |
 |---|---|
@@ -83,7 +83,7 @@ All features of the MVP scope are implemented, except push notifications.
 | Assignments | Reminders, cancellation with reason, completion, "did not show up" |
 | Trust | Mutual star ratings, published once both sides rated or the 14-day window closed, plus reliability counts for late cancellations and no-shows |
 | Safety | Report content, block users, moderation emails, display names as "first name + initial" |
-| Notifications | Email via an outbox table and an edge function: new application, acceptance, bundled chat emails, reminders 24 h before, daily budget |
+| Notifications | Push notifications with deep links into the right screen, email as fallback via an outbox table and an edge function; switches per category for push and email, reminders 24 h and 2 h before |
 | Privacy and legal | Account deletion with all personal data, imprint, privacy policy, terms of use, community rules |
 | Sharing | Server-rendered link previews for shared requests and offers, for example in WhatsApp |
 
@@ -98,9 +98,10 @@ it is merged.
 | Safety net | Web build with server rendering in CI, database type check, route types, error pages, more tests | done |
 | Email notifications | Outbox, edge function, reminders, chat digest, daily budget | done |
 | Build foundation | EAS build profiles, app ID, over-the-air updates with fingerprinting, Sentry (EU) | done |
-| Push notifications | Expo push, permission primer, deep links into the right screen | next |
-| Production and closed test | Production database, production builds, closed test on Google Play with 12+ testers for 14 days | next |
-| Release | Android and web, then iOS | planned |
+| Push notifications | Expo push, permission primer, deep links into the right screen | done |
+| Production and closed test | Production database, every merge goes live automatically, closed test on Google Play with 12+ testers for 14 days | running since 29 Oct 2026 |
+| Leagues and licenses | League per request with the required scorer license level, meeting time per request, sports halls across Germany from OpenStreetMap | done |
+| Release | Production access on Google Play, Android and web, then iOS | next |
 
 ## Architecture
 
@@ -166,16 +167,16 @@ flowchart LR
 - **Accessible UI.** Labels on every interactive element, touch targets of at least 44 pt, WCAG AA contrast, and a
   loading, empty and error state on every screen.
 
-### In numbers (as of 15 October 2026)
+### In numbers (as of 13 November 2026)
 
 | | |
 |---|---|
-| Merged pull requests | 28 |
-| Jest tests | 346 in 74 files |
-| Database assertions (pgTAP) | 569 in 20 files |
-| Edge function tests (Deno) | 29 |
-| Database migrations | 36 |
-| Architecture decision records | 21 |
+| Merged pull requests | 49 |
+| Jest test files | 80 |
+| Database test files (pgTAP) | 26 |
+| Edge function test files (Deno) | 8 |
+| Database migrations | 44 |
+| Architecture decision records | 24 |
 | CI jobs per pull request | app checks, web build with server rendering, edge functions, database tests and type check |
 
 ## How it is built
@@ -183,7 +184,9 @@ flowchart LR
 MatchCrew is a solo project. I own the product: the idea, requirements and business rules, the architecture decisions,
 the setup of all services, and the acceptance test of every package on a real device.
 
-The code is written with **Claude Code** as an agentic coding tool, inside a fixed workflow:
+The code is written entirely by **Claude Code** as an agentic coding tool. I don't write code by hand and I don't
+review it line by line; I check behaviour through automated tests, CI and my own testing on the phone. The work follows a
+fixed workflow:
 
 1. Claude proposes a plan with affected feature IDs, files, migrations, policies and tests.
 2. I approve or change the plan.
@@ -207,12 +210,12 @@ MatchCrew findet Ersatz für Spieltagsdienste am Kampfgericht, zum Start für Ba
 nicht selbst übernehmen kann, schreibt ihn als Gesuch aus. Helfer in der Nähe fragen an oder werden über ihr Angebot
 eingeladen. Nach der Zusage werden beide erinnert und bewerten sich nach dem Spiel. Bezahlt wird direkt untereinander.
 
-- **Stand:** Alle Funktionen des MVP sind umgesetzt, außer Push-Benachrichtigungen. Als Nächstes kommen Push, die
-  Produktionsumgebung und ein geschlossener Test bei Google Play, danach der Release für Android und Web, dann iOS.
+- **Stand:** Alle Funktionen des MVP sind umgesetzt, auch Push-Benachrichtigungen. Die Android-App ist seit dem
+  29.10.2026 im geschlossenen Test bei Google Play. Als Nächstes kommen der Release für Android und Web, dann iOS.
 - **Technik:** Expo und React Native mit TypeScript für Android, iOS und Web aus einer Codebasis, Supabase in Frankfurt,
   Tests mit Jest und pgTAP, CI mit GitHub Actions.
-- **Arbeitsweise:** Produkt, Anforderungen, Entscheidungen und Abnahme liegen bei mir; den Code schreibt Claude Code
-  in einem festen Ablauf aus Plan, Freigabe, Pull Request, Test auf dem Handy und Merge bei grünem CI.
+- **Arbeitsweise:** Produkt, Anforderungen, Entscheidungen und Abnahme liegen bei mir; den Code schreibt komplett
+  Claude Code, ich lese ihn nicht Zeile für Zeile, sondern prüfe über Tests, CI und eigene Tests auf dem Handy, in einem festen Ablauf aus Plan, Freigabe, Pull Request, Test auf dem Handy und Merge bei grünem CI.
 - **Ausprobieren:** [Landingpage mit Klick-Demo](https://adriannoahwimmer.github.io/matchcrew-demo/) und
   [Web-Version](https://matchcrew.expo.app) (Testumgebung).
 
