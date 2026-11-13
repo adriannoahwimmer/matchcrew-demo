@@ -69,6 +69,14 @@ li small { display: block; color: var(--grau); font-size: 14px; margin: 2px 0 8p
 .mehr small { color: #C9D0DC; font-size: 14px; }
 .mehr .pfeil { flex: none; font-size: 22px; color: var(--ball); transition: transform .15s; }
 .mehr:hover .pfeil { transform: translateX(4px); }
+.insta { display: flex; align-items: center; gap: 14px; padding: 14px 18px; border-radius: 16px; background: var(--papier); border: 1px solid var(--linie); color: var(--tafel); text-decoration: none; transition: border-color .15s; }
+.insta:hover { border-color: var(--ball); }
+.insta .at { flex: none; width: 40px; height: 40px; border-radius: 50%; background: var(--ball-light); color: var(--ball-dark); display: grid; place-items: center; font: 600 22px "Barlow Condensed", sans-serif; }
+.insta .txt { flex: 1; }
+.insta b { display: block; font-family: "Barlow Condensed", sans-serif; font-weight: 600; font-size: 20px; }
+.insta small { color: var(--grau); font-size: 14px; }
+.insta .pfeil { flex: none; font-size: 22px; font-style: normal; color: var(--ball); transition: transform .15s; }
+.insta:hover .pfeil { transform: translateX(4px); }
 footer { text-align: center; padding: 8px 16px calc(24px + env(safe-area-inset-bottom)); font-size: 14px; color: var(--grau); }
 footer a { color: var(--grau); }
 </style>
@@ -117,10 +125,16 @@ footer a { color: var(--grau); }
     <span><b>Erst mal schauen?</b><small>So funktioniert MatchCrew</small></span>
     <i class="pfeil">→</i>
   </a>
+
+  <a class="insta" href="https://www.instagram.com/matchcrew.de/" target="_blank" rel="noopener">
+    <span class="at" aria-hidden="true">@</span>
+    <span class="txt"><b>MatchCrew auf Instagram</b><small>Folg uns: @matchcrew.de</small></span>
+    <i class="pfeil">→</i>
+  </a>
 </main>
 
 <footer>
-  <a href="../">Über MatchCrew</a> · <a href="../impressum.html">Impressum</a> · <a href="../impressum.html#datenschutz">Datenschutz</a>
+  <a href="../">Über MatchCrew</a> · <a href="../impressum.html">Impressum</a> · <a href="../impressum.html#datenschutz">Datenschutz</a> · <a href="https://www.instagram.com/matchcrew.de/">Instagram</a>
 </footer>
 
 <script>
