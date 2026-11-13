@@ -184,9 +184,8 @@ flowchart LR
 MatchCrew is a solo project. I own the product: the idea, requirements and business rules, the architecture decisions,
 the setup of all services, and the acceptance test of every package on a real device.
 
-The code is written entirely by **Claude Code** as an agentic coding tool. I don't write code by hand and I don't
-review it line by line; I check behaviour through automated tests, CI and my own testing on the phone. The work follows a
-fixed workflow:
+The code is written by **Claude Code** as an agentic coding tool. I steer it and verify every change through automated
+tests, CI gates and my own testing on the phone, inside a fixed workflow:
 
 1. Claude proposes a plan with affected feature IDs, files, migrations, policies and tests.
 2. I approve or change the plan.
@@ -214,8 +213,8 @@ eingeladen. Nach der Zusage werden beide erinnert und bewerten sich nach dem Spi
   29.10.2026 im geschlossenen Test bei Google Play. Als Nächstes kommen der Release für Android und Web, dann iOS.
 - **Technik:** Expo und React Native mit TypeScript für Android, iOS und Web aus einer Codebasis, Supabase in Frankfurt,
   Tests mit Jest und pgTAP, CI mit GitHub Actions.
-- **Arbeitsweise:** Produkt, Anforderungen, Entscheidungen und Abnahme liegen bei mir; den Code schreibt komplett
-  Claude Code, ich lese ihn nicht Zeile für Zeile, sondern prüfe über Tests, CI und eigene Tests auf dem Handy, in einem festen Ablauf aus Plan, Freigabe, Pull Request, Test auf dem Handy und Merge bei grünem CI.
+- **Arbeitsweise:** Produkt, Anforderungen, Entscheidungen und Abnahme liegen bei mir; den Code schreibt Claude
+  Code, gesteuert und geprüft über automatische Tests, CI und eigene Tests auf dem Handy, in einem festen Ablauf aus Plan, Freigabe, Pull Request, Test auf dem Handy und Merge bei grünem CI.
 - **Ausprobieren:** [Landingpage mit Klick-Demo](https://adriannoahwimmer.github.io/matchcrew-demo/) und
   [Web-Version](https://matchcrew.expo.app) (Testumgebung).
 
